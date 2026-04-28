@@ -1,0 +1,111 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Cleaned and typed customer records from the raw source.
+    columns:
+      - name: customer_id
+        description: Unique identifier for the customer.
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: Customer's first name.
+        data_tests:
+          - not_null
+      - name: last_name
+        description: Customer's last name.
+        data_tests:
+          - not_null
+      - name: full_name
+        description: Concatenation of first and last name.
+        data_tests:
+          - not_null
+      - name: email
+        description: Customer's email address.
+        data_tests:
+          - not_null
+          - unique
+      - name: city
+        description: City where the customer is located.
+      - name: signup_date
+        description: Date the customer created their account, cast to date.
+        data_tests:
+          - not_null
+
+  - name: stg_flowers
+    description: Cleaned and typed flower product records from the raw source.
+    columns:
+      - name: flower_id
+        description: Unique identifier for the flower.
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        description: Full display name of the flower product.
+        data_tests:
+          - not_null
+          - unique
+      - name: category
+        description: Flower category (e.g. Rose, Tulip, Lily).
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [Rose, Tulip, Lily, Sunflower, Orchid, Peony, Lavender]
+      - name: color
+        description: Primary color of the flower.
+        data_tests:
+          - not_null
+      - name: price_cents
+        description: Unit price in cents.
+        data_tests:
+          - not_null
+      - name: price_dollars
+        description: Unit price in dollars, derived from price_cents / 100.
+        data_tests:
+          - not_null
+      - name: is_in_stock
+        description: Boolean indicating whether the flower is currently available.
+        data_tests:
+          - not_null
+
+  - name: stg_orders
+    description: Cleaned and typed order records from the raw source.
+    columns:
+      - name: order_id
+        description: Unique identifier for the order.
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Foreign key to stg_customers.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+      - name: flower_id
+        description: Foreign key to stg_flowers.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_flowers')
+              field: flower_id
+      - name: quantity
+        description: Number of flower stems ordered, cast to integer.
+        data_tests:
+          - not_null
+      - name: ordered_at
+        description: Timestamp when the order was placed, cast to timestamp.
+        data_tests:
+          - not_null
+      - name: status
+        description: Current order status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [pending, processing, shipped, delivered]
+      - name: is_delivered
+        description: Boolean flag — true when status is delivered.
+        data_tests:
+          - not_null
