@@ -1,0 +1,16 @@
+flower_id,name,category,color,price_cents,in_stock
+F001,Classic Red Rose,Rose,Red,350,true
+F002,Pink Blush Rose,Rose,Pink,350,true
+F003,White Elegance Rose,Rose,White,375,true
+F004,Red Tulip,Tulip,Red,200,true
+F005,Yellow Tulip,Tulip,Yellow,200,true
+F006,Purple Tulip,Tulip,Purple,220,false
+F007,Stargazer Lily,Lily,Pink,450,true
+F008,White Calla Lily,Lily,White,500,true
+F009,Common Sunflower,Sunflower,Yellow,275,true
+F010,Giant Sunflower,Sunflower,Yellow,325,false
+F011,Purple Orchid,Orchid,Purple,600,true
+F012,White Phalaenopsis,Orchid,White,650,true
+F013,Pink Peony,Peony,Pink,550,true
+F014,White Peony,Peony,White,575,true
+F015,Lavender Stem,Lavender,Purple,150,true
