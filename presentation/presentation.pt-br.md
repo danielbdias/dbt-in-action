@@ -312,28 +312,28 @@ style: |
 <!-- _class: cover -->
 <!-- _paginate: false -->
 
-<div class="label">Hands-on Analytics Engineering</div>
+<div class="label">Analytics Engineering na Prática</div>
 
-# dbt in <span>Action</span>
+# dbt em <span>Ação</span>
 
-Building an end-to-end analytics project — from raw CSV seeds
-to production-ready mart models — phase by phase.
+Construindo um projeto de analytics de ponta a ponta — de seeds CSV brutos
+a modelos de mart prontos para produção — fase a fase.
 
 ---
 
 <!-- _class: speaker -->
 <!-- _paginate: false -->
 
-## About me
+## Sobre mim
 
 <div class="speaker-layout">
 <div class="avatar"><img src="./daniel-2025.png" alt="Daniel Dias" /></div>
 <div class="bio">
 <h2>Daniel Dias</h2>
-<div class="role">Senior Software Engineer · dbt Labs</div>
+<div class="role">Engenheiro de Software Sênior · dbt Labs</div>
 <div class="about">
-Passionate about Developer Tools and data engineering.<br>
-Building tools that make data teams more productive.
+Apaixonado por Ferramentas para Desenvolvedores e engenharia de dados.<br>
+Construindo ferramentas que tornam as equipes de dados mais produtivas.
 </div>
 <div class="links">
 <span>🔗 LinkedIn: <strong>@danielbdias</strong></span>
@@ -349,82 +349,82 @@ Building tools that make data teams more productive.
 
 <div class="cols-3">
 <div class="card">
-<h3>Phase 1</h3>
+<h3>Fase 1</h3>
 <p><strong>Seeds & Sources</strong></p>
 <ul>
-<li>Load CSV data with <code>dbt seed</code></li>
-<li>Declare raw tables as sources</li>
-<li>Use <code>{{ source() }}</code> in models</li>
+<li>Carregue dados CSV com <code>dbt seed</code></li>
+<li>Declare tabelas brutas como sources</li>
+<li>Use <code>{{ source() }}</code> nos modelos</li>
 </ul>
 </div>
 <div class="card">
-<h3>Phase 2</h3>
-<p><strong>Staging & Testing</strong></p>
+<h3>Fase 2</h3>
+<p><strong>Staging & Testes</strong></p>
 <ul>
-<li>Typed, cleaned staging views</li>
-<li>Generic & singular tests</li>
-<li>Referential integrity checks</li>
+<li>Views de staging tipadas e limpas</li>
+<li>Testes genéricos e singulares</li>
+<li>Verificações de integridade referencial</li>
 </ul>
 </div>
 <div class="card">
-<h3>Phase 3</h3>
-<p><strong>Marts & Business Logic</strong></p>
+<h3>Fase 3</h3>
+<p><strong>Marts & Regras de Negócio</strong></p>
 <ul>
-<li>Fact & dimension joins</li>
-<li>Aggregated metrics</li>
-<li>Consumption-ready tables</li>
+<li>Joins de fatos e dimensões</li>
+<li>Métricas agregadas</li>
+<li>Tabelas prontas para consumo</li>
 </ul>
 </div>
 </div>
 
 <div class="highlight">
-Each phase is a self-contained dbt project — pick up any phase and run it independently.
+Cada fase é um projeto dbt independente — escolha qualquer fase e execute de forma isolada.
 </div>
 
 ---
 
-## Context: ETL: Extract, Transform, Load
+## Contexto: ETL — Extrair, Transformar, Carregar
 
 <div class="cols-3">
 <div class="card">
-<h3>Extract</h3>
-<p>Pull raw data from source systems — APIs, databases, flat files, SaaS tools.</p>
+<h3>Extrair</h3>
+<p>Coleta dados brutos dos sistemas de origem — APIs, bancos de dados, arquivos, ferramentas SaaS.</p>
 </div>
 <div class="card">
-<h3>Transform</h3>
-<p>Clean, reshape, and enrich the data <strong>before</strong> it reaches the warehouse — typically in a dedicated middleware layer.</p>
+<h3>Transformar</h3>
+<p>Limpa, reestrutura e enriquece os dados <strong>antes</strong> de chegarem ao warehouse — normalmente em uma camada de middleware dedicada.</p>
 </div>
 <div class="card">
-<h3>Load</h3>
-<p>Write the already-transformed data into the destination — a data warehouse or data mart ready for consumption.</p>
+<h3>Carregar</h3>
+<p>Grava os dados já transformados no destino — um data warehouse ou data mart pronto para consumo.</p>
 </div>
 </div>
 
 <div class="highlight">
-ETL was the standard when warehouses were expensive and storage was limited. Transformations happened <strong>outside</strong> the warehouse to minimize what was stored.
+O ETL era o padrão quando warehouses eram caros e o armazenamento era limitado. As transformações aconteciam <strong>fora</strong> do warehouse para minimizar o que era armazenado.
 </div>
 
 ---
 
-## Context: ELT: Extract, Load, Transform
+## Contexto: ELT — Extrair, Carregar, Transformar
 
 <div class="cols-3">
 <div class="card">
-<h3>Extract</h3>
-<p>Pull raw data from source systems — APIs, databases, flat files, SaaS tools — and make it available for loading.</p>
+<h3>Extrair</h3>
+<p>Coleta dados brutos dos sistemas de origem — APIs, bancos de dados, arquivos, ferramentas SaaS — e os disponibiliza para carga.</p>
 </div>
 <div class="card">
-<h3>Load</h3>
-<p>Land the raw data as-is into the data warehouse. No transformations yet — preserve fidelity and reprocessability.</p>
+<h3>Carregar</h3>
+<p>Persiste os dados brutos como estão no data warehouse. Sem transformações ainda — preservando fidelidade e a capacidade de reprocessamento.</p>
 </div>
 <div class="card">
-<h3>Transform</h3>
-<p>Shape the raw data into clean, tested, business-ready models <strong>inside the warehouse</strong>. This is where <strong>dbt</strong> lives.</p>
+<h3>Transformar</h3>
+<p>Modela os dados brutos em modelos limpos, testados e prontos para o negócio <strong>dentro do warehouse</strong>. É aqui que o <strong>dbt</strong> atua.</p>
 </div>
 </div>
 
 <div class="highlight">
-In ELT, the warehouse is the transformation engine. dbt handles the <strong>T</strong> — writing SQL transformations as version-controlled, testable code.
+No ELT, o warehouse é o motor de transformação. O dbt cuida do <strong>T</strong> — escrevendo transformações SQL como código versionado e testável.
 </div>
 
 ---
@@ -433,67 +433,67 @@ In ELT, the warehouse is the transformation engine. dbt handles the <strong>T</s
 
 | | **ETL** | **ELT** |
 |---|---|---|
-| **Transform step** | Before loading — in middleware | After loading — inside the warehouse |
-| **Raw data stored?** | No — only transformed output | Yes — full history preserved |
-| **Warehouse role** | Destination only | Transformation engine |
-| **Tooling** | Informatica, SSIS, Talend | dbt, Spark SQL, BigQuery |
-| **Best for** | Legacy systems, limited storage | Modern cloud warehouses |
-| **Iteration speed** | Slow — redeploy pipelines to change logic | Fast — edit SQL and re-run |
+| **Etapa de transformação** | Antes da carga — no middleware | Após a carga — dentro do warehouse |
+| **Dados brutos armazenados?** | Não — apenas o resultado transformado | Sim — histórico completo preservado |
+| **Papel do warehouse** | Apenas destino | Motor de transformação |
+| **Ferramentas** | Informatica, SSIS, Talend | dbt, Spark SQL, BigQuery |
+| **Melhor para** | Sistemas legados, armazenamento limitado | Data warehouses modernos na nuvem |
+| **Velocidade de iteração** | Lenta — redesploy de pipelines para mudar lógica | Rápida — edite o SQL e execute novamente |
 
 <div class="highlight">
-Modern cloud warehouses (BigQuery, Snowflake, Redshift, DuckDB) made storage cheap and compute elastic — removing the original justification for ETL. <strong>ELT is now the default</strong> for analytics engineering.
+Os data warehouses modernos na nuvem (BigQuery, Snowflake, Redshift, DuckDB) tornaram o armazenamento barato e o processamento elástico — eliminando a justificativa original do ETL. <strong>ELT é agora o padrão</strong> para analytics engineering.
 </div>
 
 ---
 
-## ELT Enables SDLC for Data
+## ELT Viabiliza o SDLC para Dados
 
-Because transformations are **code**, they inherit the full software engineering toolkit.
+Como as transformações são **código**, elas herdam todo o ferramental da engenharia de software.
 
 <div class="cols-3">
 <div class="card">
-<h3>Version Control</h3>
-<p>Every transformation lives in Git — full history, rollback, and blame included.</p>
+<h3>Controle de Versão</h3>
+<p>Cada transformação vive no Git — histórico completo, rollback e rastreabilidade incluídos.</p>
 </div>
 <div class="card">
-<h3>Code Review</h3>
-<p>Logic changes go through pull requests before touching production data.</p>
+<h3>Revisão de Código</h3>
+<p>Mudanças na lógica passam por pull requests antes de chegar aos dados de produção.</p>
 </div>
 <div class="card">
-<h3>Automated Testing</h3>
-<p><code>dbt test</code> runs in CI on every commit — schema, integrity, and custom assertions.</p>
+<h3>Testes Automatizados</h3>
+<p><code>dbt test</code> roda no CI a cada commit — schema, integridade referencial e assertions customizadas.</p>
 </div>
 </div>
 <div class="cols-3" style="margin-top: 16px;">
 <div class="card">
-<h3>Environment Isolation</h3>
-<p>Separate <code>dev</code>, <code>staging</code>, and <code>prod</code> schemas — experiments never leak into production.</p>
+<h3>Isolamento de Ambientes</h3>
+<p>Schemas separados para <code>dev</code>, <code>staging</code> e <code>prod</code> — experimentos nunca vazam para a produção.</p>
 </div>
 <div class="card">
-<h3>Reproducibility</h3>
-<p>Any model can be rebuilt with a single <code>dbt run</code> — no manual steps, no surprises.</p>
+<h3>Reprodutibilidade</h3>
+<p>Qualquer modelo pode ser reconstruído com um único <code>dbt run</code> — sem etapas manuais, sem surpresas.</p>
 </div>
 <div class="card">
-<h3>Access Control</h3>
-<p>Data stays in the warehouse under your existing security perimeter — no external middleware.</p>
+<h3>Controle de Acesso</h3>
+<p>Os dados ficam no warehouse sob seu perímetro de segurança existente — sem middleware externo.</p>
 </div>
 </div>
 
 <div class="highlight">
-With dbt, your <strong>T</strong> is version-controlled, peer-reviewed, tested, and deployed — just like production code.
+Com o dbt, o seu <strong>T</strong> é versionado, revisado, testado e implantado — assim como código de produção.
 </div>
 
 ---
 
-## The Scenario — 🌸 Flower Shop
+## O Cenário — 🌸 Floricultura
 
-A fictional flower shop with three raw data entities:
+Uma floricultura fictícia com três entidades de dados brutos:
 
-| Entity | Table | Description |
+| Entidade | Tabela | Descrição |
 |---|---|---|
-| 👥 **Customers** | `raw.customers` | 15 customers — contact info & signup date |
-| 🌷 **Flowers** | `raw.flowers` | 15 products — category, color, price, stock status |
-| 📦 **Orders** | `raw.orders` | 35 orders — customer × flower, quantity, timestamp, status |
+| 👥 **Clientes** | `raw.customers` | 15 clientes — informações de contato e data de cadastro |
+| 🌷 **Flores** | `raw.flowers` | 15 produtos — categoria, cor, preço, disponibilidade em estoque |
+| 📦 **Pedidos** | `raw.orders` | 35 pedidos — cliente × flor, quantidade, timestamp, status |
 
 **Stack:**
 <span class="pill">dbt Core</span>
@@ -502,33 +502,33 @@ A fictional flower shop with three raw data entities:
 <span class="pill">dbt-postgres adapter</span>
 
 <div class="highlight">
-All source data is loaded as CSV seeds — no external pipelines needed. Spin up Docker and you're ready to go.
+Todos os dados de origem são carregados como seeds CSV — nenhum pipeline externo necessário. Suba o Docker e você já está pronto.
 </div>
 
 ---
 
 <!-- _class: divider -->
 
-<div class="phase-badge">Phase 1</div>
+<div class="phase-badge">Fase 1</div>
 
-## Seeds & Source Definitions
+## Seeds & Definições de Source
 
-Loading raw data and declaring it as trusted sources.
+Carregando dados brutos e declarando-os como fontes confiáveis.
 
 ---
 
-## Phase 1 — Seeds & Source Definitions
+## Fase 1 — Seeds & Definições de Source
 
 <div class="cols">
 <div>
 
-### What you learn
+### O que você aprende
 
-- Load CSV files into the database with **`dbt seed`**
-- Declare raw tables in `sources.yml` so downstream models can use `{{ source() }}`
-- Document and describe raw data at the source layer
+- Carregar arquivos CSV no banco de dados com **`dbt seed`**
+- Declarar tabelas brutas em `sources.yml` para que modelos downstream usem `{{ source() }}`
+- Documentar e descrever dados brutos na camada de source
 
-### Project structure
+### Estrutura do projeto
 
 ```
 phase-1/
@@ -543,25 +543,25 @@ phase-1/
 </div>
 <div>
 
-### Run it
+### Execute
 
 ```bash
-# Start the database
+# Inicie o banco de dados
 docker compose up -d
 
-# Install dbt packages
+# Instale os pacotes dbt
 dbt deps
 
-# Load CSV seeds into raw schema
+# Carregue os seeds CSV no schema raw
 dbt seed
 
-# Verify setup
+# Verifique a configuração
 dbt debug
 ```
 
-### Result
+### Resultado
 
-Three raw tables land in the **`raw`** schema:
+Três tabelas brutas são criadas no schema **`raw`**:
 `raw.customers`, `raw.flowers`, `raw.orders`
 
 </div>
@@ -571,33 +571,33 @@ Three raw tables land in the **`raw`** schema:
 
 <!-- _class: divider -->
 
-<div class="phase-badge">Phase 2</div>
+<div class="phase-badge">Fase 2</div>
 
-## Staging Models & Testing
+## Modelos de Staging & Testes
 
-Cleaning raw data and asserting quality with tests.
+Limpando dados brutos e garantindo qualidade com testes.
 
 ---
 
-## Phase 2 — Staging Models & Testing
+## Fase 2 — Modelos de Staging & Testes
 
 <div class="cols">
 <div>
 
-### Staging models
+### Modelos de staging
 
-| Model | Key transformations |
+| Modelo | Transformações principais |
 |---|---|
-| `stg_customers` | Cast `signup_date` → date; derive `full_name` |
-| `stg_flowers` | Cast `in_stock` → boolean `is_in_stock`; derive `price_dollars` |
-| `stg_orders` | Cast `quantity` → int, `ordered_at` → timestamp; derive `is_delivered` |
+| `stg_customers` | Cast de `signup_date` → date; deriva `full_name` |
+| `stg_flowers` | Cast de `in_stock` → boolean `is_in_stock`; deriva `price_dollars` |
+| `stg_orders` | Cast de `quantity` → int, `ordered_at` → timestamp; deriva `is_delivered` |
 
-All staging models are **views** in the `staging` schema.
+Todos os modelos de staging são **views** no schema `staging`.
 
 </div>
 <div>
 
-### Test suite
+### Suite de testes
 
 ```yaml
 models:
@@ -627,41 +627,41 @@ models:
 
 <!-- _class: divider -->
 
-<div class="phase-badge">Phase 3</div>
+<div class="phase-badge">Fase 3</div>
 
-## Marts & Business Rules
+## Marts & Regras de Negócio
 
-Joins, aggregations, and consumption-ready tables.
+Joins, agregações e tabelas prontas para consumo.
 
 ---
 
-## Phase 3 — Mart Models
+## Fase 3 — Modelos de Mart
 
 <div class="cols-3">
 <div class="card">
 <h3>orders</h3>
-<p>Enriched order fact — denormalized row per order with customer info, flower info, <code>order_total_dollars</code>, and <code>is_delivered</code> flag.</p>
+<p>Fato de pedido enriquecido — linha desnormalizada por pedido com informações do cliente, da flor, <code>order_total_dollars</code> e flag <code>is_delivered</code>.</p>
 </div>
 <div class="card">
 <h3>customers</h3>
-<p>Customer 360 — combines profile data with aggregated order metrics: <code>total_spend_dollars</code>, <code>total_orders</code>, <code>first_order_at</code>. Customers with no orders appear with zeroed metrics.</p>
+<p>Visão 360 do cliente — combina dados de perfil com métricas agregadas de pedidos: <code>total_spend_dollars</code>, <code>total_orders</code>, <code>first_order_at</code>. Clientes sem pedidos aparecem com métricas zeradas.</p>
 </div>
 <div class="card">
 <h3>flower_performance</h3>
-<p>Per-flower sales performance — <code>total_orders</code>, <code>total_units_sold</code>, <code>total_revenue_dollars</code>. Flowers with no orders appear with zeroed metrics.</p>
+<p>Performance de vendas por flor — <code>total_orders</code>, <code>total_units_sold</code>, <code>total_revenue_dollars</code>. Flores sem pedidos aparecem com métricas zeradas.</p>
 </div>
 </div>
 
-All mart models are materialized as **tables** in the `marts` schema.
+Todos os modelos de mart são materializados como **tables** no schema `marts`.
 
 ```bash
-dbt run    # builds staging + mart layers
-dbt test   # runs the full test suite across all layers
+dbt run    # constrói as camadas de staging e mart
+dbt test   # executa a suite completa de testes em todas as camadas
 ```
 
 ---
 
-## Model Lineage
+## Linhagem dos Modelos
 
 <div class="lineage">
 <span class="raw">raw.customers</span> <span class="arrow">──►</span> <span class="stg">stg_customers</span> <span class="arrow">──┐</span><br>
@@ -673,56 +673,55 @@ dbt test   # runs the full test suite across all layers
 
 <div class="cols" style="margin-top: 24px;">
 <div>
-<span class="pill">raw.*</span> Seeds loaded by <code>dbt seed</code>
+<span class="pill">raw.*</span> Seeds carregados pelo <code>dbt seed</code>
 </div>
 <div>
-<span class="pill">stg_*</span> Cleaned views — staging layer
+<span class="pill">stg_*</span> Views limpas — camada de staging
 </div>
 </div>
 <div>
-<span class="pill" style="background:rgba(255,105,75,0.2);">marts</span> Business-ready tables — final layer
+<span class="pill" style="background:rgba(255,105,75,0.2);">marts</span> Tabelas prontas para o negócio — camada final
 </div>
 
 ---
 
-## Quickstart
+## Início Rápido
 
 ```bash
-# 1. Clone the repo and start the database
+# 1. Clone o repositório e inicie o banco de dados
 git clone https://github.com/danielbdias/dbt-in-action
 docker compose up -d
 
-# 2. Navigate to the phase you want to explore
+# 2. Navegue até a fase que deseja explorar
 cd phase-3
 
-# 3. Install dbt packages
+# 3. Instale os pacotes dbt
 dbt deps
 
-# 4. Load seed data
+# 4. Carregue os dados seed
 dbt seed
 
-# 5. Build all models
+# 5. Construa todos os modelos
 dbt run
 
-# 6. Run all tests
+# 6. Execute todos os testes
 dbt test
 ```
 
-**PostgreSQL connection:**
-`localhost:54321` · user: `postgres` · password: `postgres` · database: `postgres`
+**Conexão com o PostgreSQL:**
+`localhost:54321` · usuário: `postgres` · senha: `postgres` · banco: `postgres`
 
 ---
 
 <!-- _class: cover -->
 <!-- _paginate: false -->
 
-<div class="label">dbt in Action — Flower Shop</div>
+<div class="label">dbt em Ação — Floricultura</div>
 
-# Thank <span>you!</span>
+# Obrigado<span>!</span>
 
-Questions? Let's talk dbt, data quality, and analytics engineering.
+Perguntas? Vamos conversar sobre dbt, qualidade de dados e analytics engineering.
 
 <br>
 
 🔗 **github.com/danielbdias/dbt-in-action**
-
