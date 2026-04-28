@@ -1,0 +1,54 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: Raw seed data loaded into the warehouse from CSV files.
+    tables:
+      - name: customers
+        description: One row per customer who has signed up with the flower shop.
+        columns:
+          - name: customer_id
+            description: Unique identifier for the customer (e.g. C001).
+          - name: first_name
+            description: Customer's first name.
+          - name: last_name
+            description: Customer's last name.
+          - name: email
+            description: Customer's email address.
+          - name: city
+            description: City where the customer is located.
+          - name: signup_date
+            description: Date the customer created their account.
+
+      - name: flowers
+        description: One row per flower product available in the shop.
+        columns:
+          - name: flower_id
+            description: Unique identifier for the flower (e.g. F001).
+          - name: name
+            description: Full display name of the flower product.
+          - name: category
+            description: Flower category (e.g. Rose, Tulip, Lily).
+          - name: color
+            description: Primary color of the flower.
+          - name: price_cents
+            description: Unit price in cents.
+          - name: in_stock
+            description: Whether the flower is currently available for purchase.
+
+      - name: orders
+        description: One row per order placed by a customer.
+        columns:
+          - name: order_id
+            description: Unique identifier for the order (e.g. O001).
+          - name: customer_id
+            description: Foreign key to customers.customer_id.
+          - name: flower_id
+            description: Foreign key to flowers.flower_id.
+          - name: quantity
+            description: Number of flower stems ordered.
+          - name: ordered_at
+            description: Timestamp when the order was placed.
+          - name: status
+            description: Current order status — one of pending, processing, shipped, delivered.
