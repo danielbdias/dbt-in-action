@@ -1,0 +1,23 @@
+name: flower_shop
+
+profile: flower_shop
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  flower_shop:
+    +schema: raw
+
+models:
+  flower_shop:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table
