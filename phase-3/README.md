@@ -1,5 +1,7 @@
 # Phase 3 — Flower Shop: Marts & Business Rules
 
+> Leia em [Português Brasileiro](./README.pt-br.md)
+
 This phase builds on Phase 2 by introducing a **marts layer** that applies business rules, joins data across domains, and exposes clean, consumption-ready tables for analytics and BI tools.
 
 ## What this phase covers

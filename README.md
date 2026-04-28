@@ -1,5 +1,7 @@
 # dbt in Action — Flower Shop
 
+> Leia em [Português Brasileiro](./README.pt-br.md)
+
 A hands-on dbt sandbox that builds an end-to-end analytics project for a fictional flower shop, phase by phase. Each phase is a self-contained dbt project that introduces new concepts on top of the previous one.
 
 ## The scenario

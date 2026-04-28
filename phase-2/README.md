@@ -1,5 +1,7 @@
 # Phase 2 — Flower Shop: Staging Models & Testing
 
+> Leia em [Português Brasileiro](./README.pt-br.md)
+
 This phase builds on Phase 1 by introducing **staging models** that clean and type the raw seed data, and adding **data tests** to both sources and staging models.
 
 ## What this phase covers

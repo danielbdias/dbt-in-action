@@ -1,5 +1,7 @@
 # Phase 1 — Flower Shop: Seeds & Source Definitions
 
+> Leia em [Português Brasileiro](./README.pt-br.md)
+
 This is a [dbt](https://www.getdbt.com/) project modelling data for a fictional flower shop. It uses **PostgreSQL** as the data warehouse.
 
 ## What this phase covers
