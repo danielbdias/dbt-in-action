@@ -19,7 +19,6 @@ The flower shop data consists of three entities:
 | [Phase 1](./phase-1/README.md) | Seeds & source definitions | `dbt seed`, `{{ source() }}`, source YAML |
 | [Phase 2](./phase-2/README.md) | Staging models & testing | Typed staging views, generic tests, referential integrity |
 | [Phase 3](./phase-3/README.md) | Marts & business rules | Fact/dimension joins, aggregated metrics, `{{ ref() }}` lineage |
-| [Phase 4](./phase-4/README.md) | Porting to ClickHouse | Adapter swap, ClickHouse-specific materializations |
 
 ### Model lineage (Phases 2–3)
 
@@ -34,14 +33,12 @@ raw.orders    ──► stg_orders    ──┘
 ## Prerequisites
 
 - [Docker](https://www.docker.com/) — runs the local database
-- [dbt Core](https://docs.getdbt.com/docs/core/installation-overview) with the appropriate adapter for the phase you're running:
-  - Phases 1–3: `dbt-postgres`
-  - Phase 4: `dbt-clickhouse`
+- [dbt Core](https://docs.getdbt.com/docs/core/installation-overview) with the `dbt-postgres` adapter
 
 ## Quickstart
 
 ```bash
-# 1. Start the database (PostgreSQL for phases 1–3)
+# 1. Start the database
 docker compose up -d
 
 # 2. Navigate to the phase you want to run
